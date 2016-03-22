@@ -1,0 +1,49 @@
+By_Product_Name
+MessageText =Sinks
+search.java
+public void verifyPIPBreadCrumb() {
+		String message = dataTable.getData("MessageText");
+		String n = message.replace(" ", "_").trim();
+		System.out.println(message);
+		System.out.println(n);
+		GetScreenshot();
+		// String m =
+		// driver.findElement(By.xpath("//div[@class='row grid_30 alpha
+		// omega']//li[3]")).getText();
+		String m = driver.findElement(By.xpath("//div[@id='breadcrumb']")).getText()
+				.replace(" ", "_").trim();
+		System.out.println(m);
+		/*
+		 * if (n.trim().contains(message)) { report.updateTestLog(
+		 * "Verify the breadcrumb", "The breadcrumb contains the text." +
+		 * driver.findElement( By.xpath("//div[@class='row grid_30']"))
+		 * .getText(), Status.PASS); } else { report.updateTestLog(
+		 * "Verify the breadcrumb", "The breadcrumb contains the text." +
+		 * driver.findElement( By.xpath("//div[@class='row grid_30']"))
+		 * .getText(), Status.FAIL); }
+		 */
+		if (m.contains(n.trim())) {
+			report.updateTestLog("Verify the breadcrumb",
+					"The breadcrumb contains the text."
+							+ driver.findElement(By.xpath("//div[@id='breadcrumb']")).getText(),
+					Status.PASS);
+		} else {
+			report.updateTestLog("Verify the breadcrumb",
+					"The breadcrumb contains the text."
+							+ driver.findElement(By.xpath("//div[@id='breadcrumb']")).getText(),
+					Status.FAIL);
+		}
+
+	}
+
+
+
+
+Verify_Nocrawl_Price_With_Multiple_Filters
+flyout ,flyoutalt  -- Electrical>Door Bells & Intercoms>Door Bells
+
+
+
+
+To_Verify_Changing_Sort_Option_Loads_First_Page_Of_Browse_PLP	openHomeDepotApplication	navigateNew	navigateToNextPLP	selectPLPSortBy	clicklastpage	selectPLPSortBy
+To_Verify_Changing_Sort_Option_Loads_First_Page_Of_Search_PLP	openHomeDepotApplication	simpleSearch	selectBrand	navigateToNextPLP	selectPLPSortBy	clicklastpage	selectPLPSortBy
